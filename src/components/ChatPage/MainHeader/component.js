@@ -5,10 +5,15 @@ class MainHeader extends Component {
   render() {
     return (
       <div className="MainHeader">
-        header
+        MainHeader -
+        {this.props.roomData.name}
       </div>
     )
   }
+}
+
+MainHeader.propTypes = {
+  roomData: React.PropTypes.object.isRequired,
 }
 
 export default MainHeader;

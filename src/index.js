@@ -15,7 +15,7 @@ const Router = () => {
       <div>
         <Match exactly pattern='/' component={HomePage} />
         <Match exactly pattern='/login' component={LoginPage}/>
-        <Match exactly pattern='/chat' component={ChatPage} />
+        <Match exactly pattern='/chat/:currentRoomUrl' component={ChatPage} />
         <Miss component={NotFound} />
       </div>
     </BrowserRouter>
