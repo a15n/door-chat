@@ -3,10 +3,16 @@ import './style.css';
 
 class MainHeader extends Component {
   render() {
+    // show myName and theirNames
     return (
       <div className="MainHeader">
-        MainHeader -
-        {this.props.roomData.name}
+        <div className="MainHeader-roomName">
+          {this.props.roomData.name}  
+        </div>
+        <div>
+          <span className="MainHeader-myName">Andrew</span>
+          <span className="MainHeader-theirNames">, foo, bar, baz</span>
+        </div>
       </div>
     )
   }

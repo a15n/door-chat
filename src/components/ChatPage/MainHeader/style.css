@@ -1,4 +1,15 @@
 .MainHeader {
   height: 150px;
-  border-bottom: 1px solid black;
+}
+
+.MainHeader-roomName {
+  color: #696969;
+}
+
+.MainHeader-myName {
+  color: #FF1940;
+}
+
+.MainHeader-theirNames {
+  color: #696969;
 }

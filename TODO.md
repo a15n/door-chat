@@ -20,6 +20,31 @@ state = {
   roomMessages: [],
 }
 
+COLORS
+
+SideBar
+- background #FF1940
+- Room Names #FFFFFF
+- Active Room background #800D20
+
+
+MainHeader
+- Room Name #696969
+- my name #FF1940
+- their names #696969
+
+
+MainBody 
+- background #EFF1F2
+- names #6A6A6A
+- my message background #FF1940
+- their message text #333333
+- their message background #FFFFFF
+
+MainFooter
+- "Send" #4A90E2
+
+
 # basics
 everything in "Detailed design specs"
 * set username

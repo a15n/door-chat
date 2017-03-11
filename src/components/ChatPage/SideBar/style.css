@@ -1,8 +1,12 @@
 .SideBar {
   flex: 0 0 200px; 
-  background-color: red;
+  background-color: #FF1940;
+}
+
+.SideBar a {
+  color: #FFFFFF;
 }
 
 .SideBar li.active {
-  background-color: pink;
+  background-color: #800D20;
 }

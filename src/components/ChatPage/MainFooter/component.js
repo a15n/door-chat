@@ -6,6 +6,7 @@ class MainFooter extends Component {
     return (
       <div className='MainFooter'>
         footer
+        <span className="MainFooter-send">Send</span>
       </div>
     )
   }
