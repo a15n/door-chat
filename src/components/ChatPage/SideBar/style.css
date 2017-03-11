@@ -3,10 +3,21 @@
   background-color: #FF1940;
 }
 
-.SideBar a {
+.SideBar * {
   color: #FFFFFF;
 }
 
-.SideBar li.active {
+.SideBar-info {
+  padding: 10px 20px;
+}
+
+.SideBar-room {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.SideBar-room.active {
   background-color: #800D20;
 }
+

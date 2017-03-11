@@ -12,21 +12,24 @@ class SideBar extends Component {
     const currentRoom = this.props.currentRoom;
     const roomUrl = room.name.toLowerCase().replace(' ', '-');
     return (
-      <li 
+      <Link 
+        className={"SideBar-room" + (room === currentRoom ? ' active' : '')}
+        to={roomUrl}
         key={i} 
-        className={room === currentRoom ? 'active' : ''}
       >
-        <Link to={roomUrl}>{room.name}</Link>
-      </li>
+        {room.name}
+      </Link>
     )
   }
 
   render() {
     return (
       <div className="SideBar">
-        <ul>
-          {this.props.rooms.map(this.renderRooms)}
-        </ul>
+        <div className="SideBar-info">
+          <h3>Andrew</h3>
+          <h4>Online for __ minutes</h4>  
+        </div>
+        {this.props.rooms.map(this.renderRooms)}
       </div>
     )
   }
