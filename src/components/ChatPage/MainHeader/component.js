@@ -3,15 +3,17 @@ import './style.css';
 
 class MainHeader extends Component {
   render() {
-    // show myName and theirNames
+    // TODO show myName and theirNames
     return (
       <div className="MainHeader">
-        <div className="MainHeader-roomName">
-          {this.props.roomData.name}  
-        </div>
         <div>
-          <span className="MainHeader-myName">Andrew</span>
-          <span className="MainHeader-theirNames">, foo, bar, baz</span>
+          <div className="MainHeader-roomName">
+            <h3>{this.props.roomData.name || '-'}</h3>
+          </div>
+          <div>
+            <span className="MainHeader-myName">Andrew</span>
+            <span className="MainHeader-theirNames">, foo, bar, baz</span>
+          </div>
         </div>
       </div>
     )

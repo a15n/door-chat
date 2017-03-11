@@ -1,9 +1,17 @@
 .MainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 150px;
 }
 
 .MainHeader-roomName {
   color: #696969;
+  text-align: center;
+}
+
+.MainHeader-names {
+  text-align: center;
 }
 
 .MainHeader-myName {
