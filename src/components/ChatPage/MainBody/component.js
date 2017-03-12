@@ -16,15 +16,16 @@ class MainBody extends Component {
   }
   render() {
     // TODO make sure it begins at the bottom of the scrollable area
+    const { roomMessages, username } = this.props;
     return (
       <div className="MainBody">
         <div className="MainBody-scrollableArea">
-          {this.props.roomMessages.map(this.renderMessage)}
+          {roomMessages.map(this.renderMessage)}
           <div className="MainBody-myMessages">
             <div>
               <h2 className="MainBody-myMessage">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas assumenda nobis voluptates placeat totam, et optio ullam, pariatur vero eveniet, accusamus minima amet repudiandae ipsa facere ea officia corporis veniam!</h2>
               <h2 className="MainBody-myMessage">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas assumenda nobis voluptates placeat totam, et optio ullam, pariatur vero eveniet, accusamus minima amet repudiandae ipsa facere ea officia corporis veniam!</h2>
-              <h4 className="MainBody-name MainBody-myName">Andrew</h4>
+              <h4 className="MainBody-name MainBody-myName">{username}</h4>
             </div>
           </div>
         </div>
@@ -35,6 +36,7 @@ class MainBody extends Component {
 
 MainBody.propTypes = {
   roomMessages: React.PropTypes.array.isRequired,
+  username: React.PropTypes.string.isRequired,
 }
 
 export default MainBody;

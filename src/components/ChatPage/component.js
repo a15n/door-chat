@@ -37,7 +37,7 @@ class ChatPage extends Component {
     super()
 
     this.state = {
-      user: null,
+      username: localStorage.getItem('doorChatUsername') || '',
       rooms: [],
       currentRoom: {},
       roomData: {},
@@ -91,15 +91,15 @@ class ChatPage extends Component {
     }
   }
   render() {
-    const { rooms, currentRoom, roomData, roomMessages } = this.state;
+    const { rooms, currentRoom, roomData, roomMessages, username } = this.state;
 
     return (
       <div className="ChatPage">
-        <SideBar rooms={rooms} currentRoom={currentRoom} />
+        <SideBar rooms={rooms} currentRoom={currentRoom} username={username}/>
         <main className="ChatPage-main">
-          <MainHeader roomData={roomData} />
-          <MainBody roomMessages={roomMessages} />
-          <MainFooter />
+          <MainHeader roomData={roomData} username={username}/>
+          <MainBody roomMessages={roomMessages} username={username}/>
+          <MainFooter/>
         </main>
       </div>
     );

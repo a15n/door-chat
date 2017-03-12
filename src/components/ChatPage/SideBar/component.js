@@ -23,10 +23,11 @@ class SideBar extends Component {
   }
 
   render() {
+    const { username } = this.props;
     return (
       <div className="SideBar">
         <div className="SideBar-info">
-          <h3>Andrew</h3>
+          <h3>{username}</h3>
           <h4>Online for __ minutes</h4>  
         </div>
         {this.props.rooms.map(this.renderRooms)}
@@ -38,6 +39,7 @@ class SideBar extends Component {
 SideBar.propTypes = {
   rooms: React.PropTypes.array.isRequired,
   currentRoom: React.PropTypes.object.isRequired,
+  username: React.PropTypes.string.isRequired,
 }
 
 export default SideBar;
