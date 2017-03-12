@@ -1,11 +1,35 @@
 .MainBody {
   flex: 1;
+  position: relative;
+  overflow-x: auto;
+}
+
+/* 
+We need :before and :after because a simple box-shadow property won't overlay on top of messages.
+I'm generally unhappy about this approach but this is the best CSS-only solution I've found. 
+Inspiration -> http://stackoverflow.com/a/27451311/3304337
+*/
+.MainBody:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 12px;
+  box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+}
+.MainBody:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  box-shadow: inset 0 -12px 12px -12px rgba(0,0,0,0.5);
+}
+
+.MainBody-scrollableArea { 
   overflow-x: scroll;
+  height: 100%;
   background-color: #EFF1F2;
-  padding: 20px;
-  /*TODO This needs to be applied to the Header and Footer so the white bubbles flow beneath it*/
-  box-shadow: inset  0  8px 8px -8px #696868, 
-              inset  0 -8px 8px -8px #696868;
+  padding: 0 20px;
 }
 
 .MainBody-name {
