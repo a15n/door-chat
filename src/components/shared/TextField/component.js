@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import './style.css';
+// TODO style the input
 
+// TODO clear field on enter
 class TextField extends Component {
   constructor() {
     super();
@@ -37,9 +39,9 @@ TODO add documentation
 */
 
 TextField.propTypes = {
-  placeholder: React.PropTypes.string,
-  onChange: React.PropTypes.func.isRequired,
   onSubmit: React.PropTypes.func.isRequired,
+  placeholder: React.PropTypes.string,
+  onChange: React.PropTypes.func,
 }
 
 export default TextField;

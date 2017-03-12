@@ -45,8 +45,10 @@ class ChatPage extends Component {
     };
 
     this.updateState = this.updateState.bind(this);
+    this.updateRoomMessages = this.updateRoomMessages.bind(this);
   }
   updateState(passedUrl) {
+    // TODO only update state if state doesn't exist yet?
     const currentRoomUrl = passedUrl || this.props.params.currentRoomUrl; 
     const currentRoomName = toRoomName(currentRoomUrl);
     const stateObject = {};
@@ -90,16 +92,28 @@ class ChatPage extends Component {
       this.updateState(nextRoomUrl);
     }
   }
+  updateRoomMessages(message) {
+    const { roomMessages, username } = this.state;
+    const roomMessagesCopy = [...roomMessages];
+
+    roomMessagesCopy.push({
+      message: message,
+      name: username,
+    });
+
+    this.setState({
+      roomMessages: roomMessagesCopy,
+    })
+  }
   render() {
     const { rooms, currentRoom, roomData, roomMessages, username } = this.state;
-
     return (
       <div className="ChatPage">
         <SideBar rooms={rooms} currentRoom={currentRoom} username={username}/>
         <main className="ChatPage-main">
           <MainHeader roomData={roomData} username={username}/>
           <MainBody roomMessages={roomMessages} username={username}/>
-          <MainFooter/>
+          <MainFooter updateRoomMessages={this.updateRoomMessages}/>
         </main>
       </div>
     );

@@ -31,31 +31,3 @@ Inspiration -> http://stackoverflow.com/a/27451311/3304337
   background-color: #EFF1F2;
   padding: 0 20px;
 }
-
-.MainBody-name {
-  color: #6A6A6A;
-}
-
-.MainBody-theirMessage {
-  background-color: #FFFFFF;
-  color: #333333;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.MainBody-myMessages {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.MainBody-myMessage {
-  background-color: #FF1940;
-  color: #FFFFFF;
-  border-radius: 20px;
-  padding: 10px;
-  max-width: 300px;
-}
-
-.MainBody-myName {
-  text-align: right;
-}

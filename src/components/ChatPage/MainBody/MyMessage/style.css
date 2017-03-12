@@ -1,0 +1,28 @@
+.MessageComponent-elementContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.MessageComponent-name {
+  color: #6A6A6A;
+}
+
+.MessageComponent-message {
+  background-color: #FFFFFF;
+  color: #333333;
+  border-radius: 20px;
+  padding: 10px;
+  max-width: 300px;
+}
+
+/*TODO change everything from isMyMessage to isUser or something*/
+
+/* isMyMessage overrides */
+.MessageComponent.isMyMessage .MessageComponent-elementContainer {
+  justify-content: flex-end;
+}
+
+.MessageComponent.isMyMessage .MessageComponent-message {
+  background-color: #FF1940;
+  color: #FFFFFF;  
+}
