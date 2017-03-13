@@ -11,8 +11,10 @@ export const request = obj => {
         reject(xhr.statusText);
       }
     };
+    
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.onerror = () => reject(xhr.statusText);
-    xhr.send();
+    xhr.send(JSON.stringify(obj.body));
   });
 };
 
@@ -22,6 +24,5 @@ const capitalize = str => {
 
 export const toRoomName = roomUrl => {
   const roomNameWords = roomUrl.split('-');
-
   return roomNameWords.map(capitalize).join(' ');
 }

@@ -1,41 +1,54 @@
 import React, { Component } from 'react';
-// import './style.css';
+import './style.css';
 // TODO style the input
 
-// TODO clear field on enter
 class TextField extends Component {
   constructor() {
     super();
 
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.onSubmit(this.input.value);
+  componentDidMount() {
+    this.input.focus();
   }
-  onChange(e) {
-    e.preventDefault();
-    this.props.onChange(this.input.value);
+  componentDidUpdate() {
+    this.input.focus();
+    this.input.value = '';
+  }
+  handleKeyUp(target) {
+    const { value } = this.input;
+
+    // call onChange if provided
+    if (this.props.onChange) {
+      this.props.onChange(value);  
+    }
+    
+    // call onSubmit if key is 'enter' && value.length
+    // clear the input's value
+    if (target.keyCode === 13 && value.length) {
+      this.props.onSubmit(value);
+      this.input.value = '';
+    }
   }
   render() {
     const { value, placeholder } = this.props;
+
     return (
-      <form className="TextField" onSubmit={e => this.onSubmit(e)}>
-        <input 
-          ref={input => this.input = input} 
-          onChange={e => this.onChange(e)}
-          type="text"
-          defaultValue={value}
-          placeholder={placeholder}
-        />
-      </form>
+      <input 
+        className="TextField"
+        ref={input => this.input = input} 
+        onKeyUp={this.handleKeyUp}
+        type="text"
+        defaultValue={value}
+        placeholder={placeholder}
+      />
     )
   }
 }
 
 /*
 TODO add documentation
+TODO change these to onKeyUp and onEnter
 */
 
 TextField.propTypes = {

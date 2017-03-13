@@ -23,7 +23,6 @@ class ChatPage extends Component {
     this.updateRoomMessages = this.updateRoomMessages.bind(this);
   }
   updateState(passedUrl) {
-    // TODO only update state if state doesn't exist yet?
     const currentRoomUrl = passedUrl || this.props.params.currentRoomUrl; 
     const currentRoomName = toRoomName(currentRoomUrl);
     const stateObject = {};
@@ -68,17 +67,24 @@ class ChatPage extends Component {
     }
   }
   updateRoomMessages(message) {
-    const { roomMessages, username } = this.state;
-    const roomMessagesCopy = [...roomMessages];
+    const { currentRoom, roomMessages, username } = this.state;
 
-    roomMessagesCopy.push({
-      message: message,
-      name: username,
+    request({
+      method: 'POST',
+      url: `http://localhost:8080/api/rooms/${currentRoom.id}/messages`,
+      body: {name: username, message: message}
+    }).then(res => {
+      const roomMessagesCopy = [...roomMessages];
+
+      roomMessagesCopy.push({
+        message: message,
+        name: username,
+      });
+
+      this.setState({
+        roomMessages: roomMessagesCopy,
+      });
     });
-
-    this.setState({
-      roomMessages: roomMessagesCopy,
-    })
   }
   render() {
     const { rooms, currentRoom, roomData, roomMessages, username } = this.state;
