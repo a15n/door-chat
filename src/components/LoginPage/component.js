@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import TextField from '../shared/TextField/component';
+import RedButton from '../shared/RedButton/component';
 import './component.css';
 
 class LoginPage extends Component {
   constructor() {
     super()
+
+    this.state = {
+      loginPageHasError: false,
+    }
     
     this.updateUsername = this.updateUsername.bind(this);
     this.validateAndEnter = this.validateAndEnter.bind(this);
@@ -17,14 +22,16 @@ class LoginPage extends Component {
   validateAndEnter() {
     const username = localStorage.getItem('doorChatUsername');
     if (username && username.length) {
+      this.setState({loginPageHasError: false});
       this.context.router.transitionTo('/chat/tea-chats');
     } else {
-      console.warn('please provide a username');
+      this.setState({loginPageHasError: true});
     }
   }
   
   render() {
     const username = localStorage.getItem('doorChatUsername') || '';
+    const { loginPageHasError } = this.state;
     return (
       <div className='LoginPage'>
         <div className='LoginPage-container'>
@@ -34,8 +41,8 @@ class LoginPage extends Component {
             onChange={this.updateUsername}
             value={username}
           />
-          <hr/>
-          <button onClick={this.validateAndEnter}>Join the DoorDash chat!</button>
+          {loginPageHasError ? (<div className='LoginPage-error u-marginTop--md'>Add a username</div>) : ''}
+          <RedButton className='u-marginTop--md' text="Join the DoorDash Chat" onClick={this.validateAndEnter}/>
         </div>
       </div>
     );
