@@ -19,12 +19,10 @@ class MainBody extends Component {
   }
   renderMessage(messageObject, i) {
     const username = localStorage.getItem('doorChatUsername');
-    let isMyMessage = messageObject.name === username;
+    let isUserMessage = messageObject.name === username;
     
     return (
-      <div key={i}>
-        <MyMessage message={messageObject.message} name={messageObject.name} isMyMessage={isMyMessage}/>
-      </div>
+      <MyMessage key={i} message={messageObject.message} name={messageObject.name} isUserMessage={isUserMessage}/>
     )
   }
   render() {

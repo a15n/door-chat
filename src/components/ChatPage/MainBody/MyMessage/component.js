@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import './style.css';
 
 class MyMessage extends Component {
-  // <div className={"MainBody-" + (isMyMessage ? 'myMessage' : 'theirMessage')}>
-  // <h4 className="MessageComponent-name MainBody-myName">{name}</h4>
   render() {
-    const { message, name, isMyMessage } = this.props;
+    const { message, name, isUserMessage } = this.props;
     return (
-      <div className={"MessageComponent" + (isMyMessage ? ' isMyMessage' : '')}>
+      <div className={"MessageComponent" + (isUserMessage ? ' isUserMessage' : '')}>
         <div className="MessageComponent-elementContainer">
           <h2 className="MessageComponent-message">{message}</h2>
         </div>

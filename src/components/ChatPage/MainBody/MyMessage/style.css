@@ -15,14 +15,12 @@
   max-width: 300px;
 }
 
-/*TODO change everything from isMyMessage to isUser or something*/
-
-/* isMyMessage overrides */
-.MessageComponent.isMyMessage .MessageComponent-elementContainer {
+/* isUserMessage overrides */
+.MessageComponent.isUserMessage .MessageComponent-elementContainer {
   justify-content: flex-end;
 }
 
-.MessageComponent.isMyMessage .MessageComponent-message {
+.MessageComponent.isUserMessage .MessageComponent-message {
   background-color: #FF1940;
   color: #FFFFFF;  
 }
