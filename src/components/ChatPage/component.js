@@ -6,6 +6,7 @@ import MainHeader from './MainHeader/component';
 import MainBody from './MainBody/component';
 import MainFooter from './MainFooter/component';
 
+const API_BASE_URL = 'http://localhost:8080/api';
 
 class ChatPage extends Component {
   constructor() {
@@ -28,20 +29,20 @@ class ChatPage extends Component {
     const stateObject = {};
     
     const self = this;
-    request({url: 'http://localhost:8080/api/rooms'})
+    request({url: `${API_BASE_URL}/rooms`})
     .then(data => {
       const rooms = JSON.parse(data);      
       const currentRoom = rooms.find(room => currentRoomName === room.name);
 
       stateObject.rooms = rooms;
       stateObject.currentRoom = currentRoom;
-      return request({url: `http://localhost:8080/api/rooms/${currentRoom.id}`});
+      return request({url: `${API_BASE_URL}/rooms/${currentRoom.id}`});
     })
     .then(data => {
       const roomData = JSON.parse(data);
 
       stateObject.roomData = roomData;
-      return request({url: `http://localhost:8080/api/rooms/${roomData.id}/messages`});
+      return request({url: `${API_BASE_URL}/rooms/${roomData.id}/messages`});
     })
     .then(data => {
       const roomMessages = JSON.parse(data);
@@ -71,7 +72,7 @@ class ChatPage extends Component {
 
     request({
       method: 'POST',
-      url: `http://localhost:8080/api/rooms/${currentRoom.id}/messages`,
+      url: `${API_BASE_URL}/rooms/${currentRoom.id}/messages`,
       body: {name: username, message: message}
     }).then(res => {
       const roomMessagesCopy = [...roomMessages];
