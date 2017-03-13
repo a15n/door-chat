@@ -21,3 +21,7 @@
   background-color: #800D20;
 }
 
+.SideBar-room:hover {
+  text-decoration: underline;
+}
+
