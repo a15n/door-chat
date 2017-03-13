@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.css';
-// TODO style the input
 
 class TextField extends Component {
   constructor() {

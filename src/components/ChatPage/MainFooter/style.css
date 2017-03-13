@@ -11,18 +11,3 @@
   width: 100%;
   padding: 0 20px;
 }
-
-.MainFooter-input {
-  padding: 14px;
-  border: 1px solid #b7b7b7;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
-  flex: 1;
-}
-
-.MainFooter-send {
-  color: #4A90E2;
-  text-decoration: none;
-  width: 50px;
-  margin-left: 20px;
-}
