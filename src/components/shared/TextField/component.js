@@ -17,15 +17,15 @@ class TextField extends Component {
   handleKeyUp(target) {
     const { value } = this.input;
 
-    // call onChange if provided
-    if (this.props.onChange) {
-      this.props.onChange(value);  
+    // call onKeyUp if provided
+    if (this.props.onKeyUp) {
+      this.props.onKeyUp(value);  
     }
     
-    // call onSubmit if key is 'enter' && value.length
+    // call onEnter if key is 'enter' && value.length
     // clear the input's value
     if (target.keyCode === 13 && value.length) {
-      this.props.onSubmit(value);
+      this.props.onEnter(value);
       this.input.value = '';
     }
   }
@@ -47,13 +47,12 @@ class TextField extends Component {
 
 /*
 TODO add documentation
-TODO change these to onKeyUp and onEnter
 */
 
 TextField.propTypes = {
-  onSubmit: React.PropTypes.func.isRequired,
+  onEnter: React.PropTypes.func.isRequired,
   placeholder: React.PropTypes.string,
-  onChange: React.PropTypes.func,
+  onKeyUp: React.PropTypes.func,
 }
 
 export default TextField;

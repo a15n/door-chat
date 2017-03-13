@@ -37,8 +37,8 @@ class LoginPage extends Component {
         <div className='LoginPage-container'>
           <TextField 
             placeholder='Type your username...' 
-            onSubmit={this.validateAndEnter} 
-            onChange={this.updateUsername}
+            onEnter={this.validateAndEnter} 
+            onKeyUp={this.updateUsername}
             value={username}
           />
           {loginPageHasError ? (<div className='LoginPage-error u-marginTop--md'>Add a username</div>) : ''}

@@ -8,7 +8,7 @@ class MainFooter extends Component {
     return (
       <div className="MainFooter">
         <div className="MainFooter-actionsContainer">
-          <TextField onSubmit={updateRoomMessages}/>
+          <TextField onEnter={updateRoomMessages}/>
         </div>
       </div>
     )
@@ -18,7 +18,7 @@ class MainFooter extends Component {
 // TODO explain "send" vs `press enter` decision
 
 MainFooter.PropTypes = {
-  onSubmit: React.PropTypes.func.isRequired,
+  onEnter: React.PropTypes.func.isRequired,
 }
 
 export default MainFooter;
