@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import MyMessage from './MyMessage/component';
+import Message from './Message/component';
 
 class MainBody extends Component {
   constructor() {
@@ -24,7 +24,7 @@ class MainBody extends Component {
     let isUserMessage = messageObject.name === username;
     
     return (
-      <MyMessage key={i} message={messageObject.message} name={messageObject.name} isUserMessage={isUserMessage}/>
+      <Message key={i} message={messageObject.message} name={messageObject.name} isUserMessage={isUserMessage}/>
     )
   }
   render() {

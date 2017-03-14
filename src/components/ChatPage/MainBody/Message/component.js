@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 
-class MyMessage extends Component {
+class Message extends Component {
   render() {
     const { message, name, isUserMessage } = this.props;
     return (
@@ -17,9 +17,9 @@ class MyMessage extends Component {
   }
 }
 
-MyMessage.propTypes = {
+Message.propTypes = {
   message: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
 }
 
-export default MyMessage;
+export default Message;
