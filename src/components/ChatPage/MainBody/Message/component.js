@@ -7,10 +7,10 @@ class Message extends Component {
     return (
       <div className={"MessageComponent" + (isUserMessage ? ' isUserMessage' : '')}>
         <div className="MessageComponent-elementContainer">
-          <h2 className="MessageComponent-message">{message}</h2>
+          <span className="MessageComponent-message">{message}</span>
         </div>
         <div className="MessageComponent-elementContainer">
-          <h4 className="MessageComponent-name MainBody-myName">{name}</h4>
+          <span className="MessageComponent-name MainBody-myName">{name}</span>
         </div>
       </div>
     )

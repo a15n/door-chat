@@ -29,7 +29,7 @@ class SideBar extends Component {
     return (
       <div className="SideBar">
         <div className="SideBar-info">
-          <h3>{username}</h3>
+          <h3 className="SideBar-username">{username}</h3>
           <OnlineMinutes/>
         </div>
         {rooms.map(this.renderRoomLink)}

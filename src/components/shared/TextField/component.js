@@ -45,10 +45,6 @@ class TextField extends Component {
   }
 }
 
-/*
-TODO add documentation
-*/
-
 TextField.propTypes = {
   onEnter: React.PropTypes.func.isRequired,
   placeholder: React.PropTypes.string,

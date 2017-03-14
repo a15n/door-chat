@@ -13,7 +13,7 @@ class MainHeader extends Component {
       <div className="MainHeader">
         <div> {/* div needed for parent's `display: flex;` */}
           <div className="MainHeader-roomName">
-            <h3>{roomData.name || '-'}</h3>
+            <h2 className="u-fontWeight--300 u-marginVertical--sm">{roomData.name || '-'}</h2>
           </div>
           <div>
             <span className="MainHeader-myName">{username}</span>

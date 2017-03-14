@@ -32,7 +32,7 @@ router.use(function(req, res, next) {
 
 // Simple in memory 'database'
 const database = [
-  { name: 'Tea Chats', id: 0, users: ['Ryan','Nick'], messages: [{name: 'Ryan', message: 'ayyyyy'},{name: 'Nick', message: 'lmao'},{name: 'Ryan', message: 'ayyyyy'},{name: 'Nick', message: 'lmao'},{name: 'Ryan', message: 'ayyyyy'},{name: 'Nick', message: 'lmao'}]},
+  { name: 'Tea Chats', id: 0, users: ['Ryan','Nick'], messages: [{name: 'Ryan', message: 'ayyyyy'},{name: 'Nick', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ipsam ullam, quia id voluptates rem odio nulla possimus non. Impedit eius atque accusantium veniam, laboriosam eveniet. Quo tenetur, ut architecto! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ipsam ullam, quia id voluptates rem odio nulla possimus non. Impedit eius atque accusantium veniam, laboriosam eveniet. Quo tenetur, ut architecto!'},{name: 'Ryan', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ipsam ullam, quia id voluptates rem odio nulla possimus non. Impedit eius atque accusantium veniam, laboriosam eveniet. Quo tenetur, ut architecto! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ipsam ullam, quia id voluptates rem odio nulla possimus non. Impedit eius atque accusantium veniam, laboriosam eveniet. Quo tenetur, ut architecto!'}]},
   { name: 'Coffee Chats', id: 1, users: ['Abdul'], messages: [{name: 'Abdul', message: 'ayy'}]}
 ]
 

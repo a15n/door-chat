@@ -13,21 +13,21 @@ Inspiration -> http://stackoverflow.com/a/27451311/3304337
   content: "";
   position: absolute;
   width: 100%;
-  height: 12px;
-  box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+  height: 10px;
+  box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.5);
 }
 .MainBody:after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 12px;
-  box-shadow: inset 0 -12px 12px -12px rgba(0,0,0,0.5);
+  height: 10px;
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
 }
 
 .MainBody-scrollableArea { 
   overflow-x: scroll;
   height: 100%;
   background-color: #EFF1F2;
-  padding: 0 20px;
+  padding: 0 30px;
 }

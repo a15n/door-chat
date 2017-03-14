@@ -1,5 +1,5 @@
 .SideBar {
-  flex: 0 0 200px; 
+  flex: 0 0 300px; 
   background-color: #FF1940;
 }
 
@@ -8,12 +8,18 @@
 }
 
 .SideBar-info {
-  padding: 10px 20px;
+  padding: 20px;
+  height: 150px;
+  box-sizing: border-box;
+}
+
+.SideBar-username {
+  margin-bottom: 0;
 }
 
 .SideBar-room {
   display: block;
-  padding: 10px 20px;
+  padding: 15px 20px;
   text-decoration: none;
 }
 
