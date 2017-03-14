@@ -15,8 +15,9 @@ export default class OnlineMinutes extends Component {
   }
   render() {
     const { minutesSinceMount } = this.state;
+    const minuteString = minutesSinceMount === 1 ? 'minute' : 'minutes';
     return (
-      <h4>Online for {minutesSinceMount} minutes</h4>
+      <h4>Online for {minutesSinceMount} {minuteString}</h4>
     )  
   }
 }

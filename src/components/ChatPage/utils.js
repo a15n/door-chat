@@ -1,5 +1,3 @@
-// TODO and add tests
-
 export const request = obj => {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
@@ -18,11 +16,14 @@ export const request = obj => {
   });
 };
 
-const capitalize = str => {
+export const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
 export const toRoomName = roomUrl => {
-  const roomNameWords = roomUrl.split('-');
-  return roomNameWords.map(capitalize).join(' ');
+  return roomUrl.split('-').map(capitalize).join(' ');
+}
+
+export const toRoomUrl = roomName => {
+  return roomName.toLowerCase().replace(/ /g, '-', );
 }

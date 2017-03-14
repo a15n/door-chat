@@ -18,7 +18,7 @@ class MainFooter extends Component {
 // TODO explain "send" vs `press enter` decision
 
 MainFooter.PropTypes = {
-  onEnter: React.PropTypes.func.isRequired,
+  updateRoomMessages: React.PropTypes.func.isRequired,
 }
 
 export default MainFooter;

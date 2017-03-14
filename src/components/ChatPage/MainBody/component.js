@@ -9,7 +9,9 @@ class MainBody extends Component {
   }
   scrollToBottom() {
     const scrollToElement = document.querySelector('.scrollToElement');
-    scrollToElement.scrollIntoView({behavior: "smooth"});
+    if (scrollToElement) {
+      scrollToElement.scrollIntoView({behavior: "smooth"});  
+    }
   }
   componentDidMount() {
     this.scrollToBottom();
@@ -18,7 +20,7 @@ class MainBody extends Component {
     this.scrollToBottom();
   }
   renderMessage(messageObject, i) {
-    const username = localStorage.getItem('doorChatUsername');
+    const { username } = this.props;
     let isUserMessage = messageObject.name === username;
     
     return (

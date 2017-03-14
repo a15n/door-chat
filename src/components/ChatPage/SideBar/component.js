@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './style.css';
+import { toRoomUrl } from '../utils';
 import OnlineMinutes from './OnlineMinutes/component'
 
 class SideBar extends Component {
   constructor() {
     super();
-    this.renderRooms = this.renderRooms.bind(this);
+    this.renderRoomLink = this.renderRoomLink.bind(this);
   }
 
-  renderRooms(room, i) {
-    const currentRoom = this.props.currentRoom;
-    const roomUrl = room.name.toLowerCase().replace(' ', '-');
+  renderRoomLink(room, i) {
+    const { currentRoom } = this.props;
+    const roomUrl = toRoomUrl(room.name);
     return (
       <Link 
         className={"SideBar-room" + (room === currentRoom ? ' active' : '')}
@@ -24,14 +25,14 @@ class SideBar extends Component {
   }
 
   render() {
-    const { username } = this.props;
+    const { username, rooms } = this.props;
     return (
       <div className="SideBar">
         <div className="SideBar-info">
           <h3>{username}</h3>
           <OnlineMinutes/>
         </div>
-        {this.props.rooms.map(this.renderRooms)}
+        {rooms.map(this.renderRoomLink)}
       </div>
     )
   }
